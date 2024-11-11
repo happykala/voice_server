@@ -19,9 +19,9 @@ path = tts.tts_to_file(text="Since this model is multi-lingual voice cloning mod
 
 print(path)
 
-# 读取音频文件
-audio = AudioSegment.from_file(path)
-# 调整音频速度
-new_audio = audio.speedup(playback_speed=0.5)
-# 保存新的音频文件
-new_audio.export("outputslow.wav", format="wav")
+# # 读取音频文件
+# audio = AudioSegment.from_file(path)
+# # 调整音频速度
+# new_audio = audio.speedup(playback_speed=0.5)
+# # 保存新的音频文件
+# new_audio.export("outputslow.wav", format="wav")
