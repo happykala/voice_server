@@ -151,5 +151,12 @@ build:
     - "wrapt==1.16.0"
     - "yarl==1.17.1"
     - "zipp==3.20.2"
+  run:
+    - wget -P /home/model https://audioaiforyou.s3.us-east-2.amazonaws.com/voicemodel/tts_models--multilingual--multi-dataset--xtts_v2/config.json
+    - wget -P /home/model https://audioaiforyou.s3.us-east-2.amazonaws.com/voicemodel/tts_models--multilingual--multi-dataset--xtts_v2/hash.md5
+    - wget -P /home/model https://audioaiforyou.s3.us-east-2.amazonaws.com/voicemodel/tts_models--multilingual--multi-dataset--xtts_v2/model.pth
+    - wget -P /home/model https://audioaiforyou.s3.us-east-2.amazonaws.com/voicemodel/tts_models--multilingual--multi-dataset--xtts_v2/speakers_xtts.pth
+    - wget -P /home/model https://audioaiforyou.s3.us-east-2.amazonaws.com/voicemodel/tts_models--multilingual--multi-dataset--xtts_v2/tos_agreed.txt
+    - wget -P /home/model https://audioaiforyou.s3.us-east-2.amazonaws.com/voicemodel/tts_models--multilingual--multi-dataset--xtts_v2/vocab.json
 
 predict: "predict.py:Predictor"

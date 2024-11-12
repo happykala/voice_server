@@ -5,7 +5,7 @@ from pydub import AudioSegment
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # List available 🐸TTS models
-# print(TTS().list_models())
+print(TTS().list_models())
 # print(device)
 # Init TTS
 tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to(device)
@@ -15,9 +15,9 @@ tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to(device)
 # # Text to speech list of amplitude values as output
 # wav = tts.tts(text="Hello world!", speaker_wav="6448186ce6a310d12f2d1d2c.mp3", language="en", file_path="output.wav")
 # # Text to speech to a file
-path = tts.tts_to_file(text="Since this model is multi-lingual voice cloning model, we must set the target speaker_wav and language",speed=0.1, speaker_wav="6448186ce6a310d12f2d1d2c.mp3", emotion="sleepy", language="en", file_path="output.wav")
+# path = tts.tts_to_file(text="Since this model is multi-lingual voice cloning model, we must set the target speaker_wav and language",speed=0.1, speaker_wav="6448186ce6a310d12f2d1d2c.mp3", emotion="sleepy", language="en", file_path="output.wav")
 
-print(path)
+# print(path)
 
 # # 读取音频文件
 # audio = AudioSegment.from_file(path)
