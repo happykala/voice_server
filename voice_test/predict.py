@@ -2,12 +2,15 @@
 from cog import BasePredictor, Input, Path
 import os
 from TTS.api import TTS
+from typing import Any
 
 class Predictor(BasePredictor):
     def setup(self) -> None:
         """Load the model into memory to make running multiple predictions efficient"""
         os.environ["COQUI_TOS_AGREED"] = "1"
-        self.model = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to('cuda')
+        # 将这里的model替换为主动下载的模型路径，这样就不需要每次初始化的时候都需要下载了
+        self.model = TTS(model_path='/home/model', config_path='/home/model/config.json').to('cuda')
+        # self.model = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to('cuda')
 
     def predict(
         self,
@@ -25,7 +28,7 @@ class Predictor(BasePredictor):
             description="Whether to apply denoising to the speaker audio (microphone recordings)",
             default=False
         ),
-    ) -> Path:
+    ) -> Any:
         """Run a single prediction on the model"""
         speaker_wav = speaker
         filter = "highpass=75,lowpass=8000,"

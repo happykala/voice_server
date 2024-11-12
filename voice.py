@@ -10,6 +10,7 @@ print(TTS().list_models())
 # Init TTS
 tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to(device)
 
+tts = TTS(model_path='/home/model/model.pth', config_path='/home/model/config.json').to(device)
 # # Run TTS
 # # ❗ Since this model is multi-lingual voice cloning model, we must set the target speaker_wav and language
 # # Text to speech list of amplitude values as output
