@@ -97,5 +97,5 @@ class Predictor(BasePredictor):
         )
         # 处理完毕，删除下载的音频文件
         os.remove(audio_path_temp)
-        print("delete video success")
+        print("delete speaker audio temp success")
         return Path(path)
